@@ -60,7 +60,7 @@ function draw() {
   if(chapter == 0){
     background(0);
     fill(237, 221, 212);
-    text('level 5 Acceptance', 1920 / 2, 1080 / 2, 300);
+    text('level 5 Acceptance', 1920 / 2 - 200, 1080 / 2, 300);
   
   }
     if (screen >= 1){
