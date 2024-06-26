@@ -8,6 +8,7 @@ let wspomnienia = [];
 let WisPressed = 6;
 let font;
 let chapter = 0;
+let screen = 0;
 
 const numPoints = 4;
 const dragRadius = 20;
@@ -47,7 +48,7 @@ function setup() {
 }
 
 function draw() {
-  background(220,120);
+  background(237, 221, 212);
   image(img1,1920 /2 - img1.width /2 ,1080 / 2 - img1.height /2);
   fill(0);
   text('Pack the box', 1920 /2, 200);
@@ -58,8 +59,16 @@ function draw() {
   }
   if(chapter == 0){
     background(0);
-    fill(255);
+    fill(237, 221, 212);
     text('level 5 Acceptance', 1920 / 2, 1080 / 2, 300);
+  
+  }
+    if (screen >= 1){
+    background(0);
+    fill(255);
+    textSize(64);
+    text('Childhood complete!', 1920 / 2, 1080 / 2);
+  
   }
 }
 
@@ -102,9 +111,14 @@ function mouseReleased() {
   for(let i = 0; i<numPoints;i++) {
     wspomnienia[i].checkBox();
     if (wspomnienia[i].inTheBox){howManyInTheBox++}
+    
+    if (howManyInTheBox == 4 && screen == 2){
+      window.open('https://activistgames.github.io/startingPoints', '_self');
+    
+    }
+    if(howManyInTheBox == 4){
+      screen++;
+    }
   }
-  if (howManyInTheBox == 4){
-  }
-}
 
-  
+}
